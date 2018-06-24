@@ -1,0 +1,35 @@
+﻿@model List<MVCApp.Models.Customer>
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Customers</h2>
+<h3>Customer</h3>
+
+<table  class="table table-striped">
+   <thead>
+       <tr>
+           <th>
+               ID
+           </th>
+           <th>
+               Name
+           </th>
+           <th>
+               NewsLetterSubscribed
+           </th>
+       </tr>
+   </thead>
+   <tbody>
+       @foreach (var item in Model)
+       {
+       <tr>
+           <td>@item.Id</td>
+           <td>@item.Name</td>
+           <td>@item.IsSubscribedToNewsLetters.ToString()</td>
+       </tr>
+       }
+   </tbody>
+</table>
+
